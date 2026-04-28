@@ -21,20 +21,20 @@ Select ONE Additional Feature to Add
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>Quiz About [Me]</h1>
+    <h1>Quiz About Amelie!</h1>
     <hr />
     <!-- Movie Question -->
     <form id="movie-form">
       <label>
-        🎥 What is my favorite movie?
+        🎥 where do i wanna live?
         <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+          <option value="movie1">london</option>
+          <option value="movie2">california</option>
+          <option value="movie3">paris</option>
+          <option value="movie4">japan</option>
         </select>
       </label>
-      <button type="submit">Check Movie Answer</button>
+      <button type="submit">check answer</button>
     </form>
     <div id="movie-result">
       <p id="movie-text"></p>
@@ -43,15 +43,15 @@ Select ONE Additional Feature to Add
     <!-- Book Question -->
     <form id="book-form">
       <label>
-        📖 What is my favorite book?
+        📖 what is my favorite show?
         <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+          <option value="book1">survivor</option>
+          <option value="book2">outerbanks</option>
+          <option value="book3">the office</option>
+          <option value="book4">gilmore girls</option>
         </select>
       </label>
-      <button type="submit">Check Book Answer</button>
+      <button type="submit">see answer</button>
     </form>
     <div id="book-result">
       <p id="book-text"></p>
@@ -81,8 +81,8 @@ Select ONE Additional Feature to Add
         var $answer = $("#book-answer");
         var answer = $answer.val();
 
-        if (answer === "book1") {
-          $("#book-text").text("YESSSS!");
+        if (answer === "book3") {
+          $("#book-text").text("MY FAVORITE!!!");
         } 
         else {
           $("#book-text").text("Try Again!");
