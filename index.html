@@ -23,69 +23,81 @@ Select ONE Additional Feature to Add
   <body>
     <h1>Quiz About Amelie!</h1>
     <hr />
-    <!-- Movie Question -->
-    <form id="movie-form">
+    <!-- place Question -->
+    <form id="place-form">
       <label>
          <strong>where do i wanna live?</strong>
-        <select id="movie-answer">
-          <option value="movie1">london</option>
-          <option value="movie2">california</option>
-          <option value="movie3">paris</option>
-          <option value="movie4">japan</option>
+        <select id="place-answer">
+          <option value="place1">london</option>
+          <option value="place2">california</option>
+          <option value="place3">paris</option>
+          <option value="place4">japan</option>
         </select>
       </label>
       <button type="submit">check answer</button>
     </form>
-    <div id="movie-result">
-      <p id="movie-text"></p>
+    <div id="place-result">
+      <p id="place-text"></p>
     </div>
     <hr />
-    <!-- Book Question -->
-    <form id="book-form">
+    <!-- show Question -->
+    <form id="show-form">
       <label>
          <strong>what is my favorite show?</strong> 
-        <select id="book-answer">
-          <option value="book1">survivor</option>
-          <option value="book2">outerbanks</option>
-          <option value="book3">the office</option>
-          <option value="book4">gilmore girls</option>
+        <select id="show-answer">
+          <option value="show1">survivor</option>
+          <option value="show2">outerbanks</option>
+          <option value="show3">the office</option>
+          <option value="show4">gilmore girls</option>
         </select>
       </label>
       <button type="submit">see answer</button>
     </form>
-    <div id="book-result">
-      <p id="book-text"></p>
+    <div id="show-result">
+      <p id="show-text"></p>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
       
+    
+          event.preventDefault();
+          var $placeType = $(this).find("[name=type]");
+          var placeType = $placetype.val();
+          var $img = $("<img>");
+          $img.width(100);
+          $img.attr("src", placeImages[placeType]);
+          $img.appendTo("body");
+        });
+        </script>
+
+        <script>
       //========================Movie Question jQuery Code
-      $("#movie-form").on("submit", function (event) {
+      $("#place-form").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#movie-answer");
+        var $answer = $("#place-answer");
         var answer = $answer.val();
 
-        if (answer === "movie1") {
-          $("#movie-text").text("YESSSS!");
+        if (answer === "place1") {
+          $("#place-text").text("YESSSS!");
         } 
         else {
-          $("#movie-text").text("Try Again!");
+          $("#place-text").text("nahhhh");
         }
       });
 
       //=======================Book Question jQuery Code
-      $("#book-form").on("submit", function (event) {
+      $("#show-form").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#book-answer");
+        var $answer = $("#show-answer");
         var answer = $answer.val();
 
-        if (answer === "book3") {
-          $("#book-text").text("MY FAVORITE!!!");
+        if (answer === "show3") {
+          $("#show-text").text("MY FAVORITE!!!");
         } 
         else {
-          $("#book-text").text("Try Again!");
+          $("#show-text").text("NO");
         }
       });
       
